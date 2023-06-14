@@ -1,0 +1,6 @@
+.forecast-day-container {
+    text-align: center;
+    border: 1px solid rgb(214, 181, 181);
+    border-radius: 3px;
+    padding: 10px;
+}
