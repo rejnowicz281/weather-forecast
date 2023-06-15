@@ -1,7 +1,9 @@
 .forecast-hour {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     border: 1px solid rgb(214, 181, 181);
     border-radius: 3px;
     padding: 10px;
+    margin: 10px;
 }
