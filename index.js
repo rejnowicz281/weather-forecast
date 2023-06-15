@@ -9,16 +9,16 @@ async function getWeatherInfo() {
     return data;
 }
 
-function giveFeedback() {
+function giveFeedback(message) {
     weatherContainer.classList.add("d-none");
-    feedback.classList.remove("d-none");
-    feedback.textContent = "Type in a city.";
+    feedback.textContent = message;
 }
 
 async function renderWeather() {
     try {
+        giveFeedback("Loading...");
         let weatherInfo = await getWeatherInfo();
-
+        giveFeedback("Request Approved.");
         const cityName = document.getElementById("city-name");
         const countryName = document.getElementById("country-name");
         const lastUpdated = document.getElementById("last-updated");
@@ -36,7 +36,6 @@ async function renderWeather() {
         const forecastHourContainer = document.querySelector(".forecast-hour-container");
 
         forecastHourContainer.innerHTML = "";
-        feedback.classList.add("d-none");
         weatherContainer.classList.remove("d-none");
 
         cityName.textContent = weatherInfo.location.name;
@@ -75,11 +74,11 @@ async function renderWeather() {
         });
         console.log(weatherInfo);
     } catch {
-        giveFeedback();
+        giveFeedback("Type in a valid city name.");
     }
 }
 
-giveFeedback();
+giveFeedback("Type in a city.");
 
 cityInput.addEventListener("input", () => {
     renderWeather();
