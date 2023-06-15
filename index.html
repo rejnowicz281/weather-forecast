@@ -14,65 +14,61 @@
     </head>
     <body>
         <div class="container p-5">
-            <div class="text-center">
-                <input class="form-control" type="text" id="city-input" placeholder="Type in city here" />
-                <button role="button" type="button" class="btn btn-primary m-3" id="check-weather-button">
-                    Check The Weather
-                </button>
-            </div>
-            <div class="p-3 w-100 m-3">
-                <div class="d-flex gap-5 justify-content-center align-items-center">
-                    <div class="text-center">
-                        <div class="fs-2">
-                            <span id="city-name">Kielce</span>, <span id="country-name">Poland</span>
+            <input class="form-control" type="text" id="city-input" placeholder="Type in city here" />
+            <div class="feedback fs-4 m-3 text-center"></div>
+            <div class="weather-container d-none">
+                <div class="p-3 w-100 m-3">
+                    <div class="d-flex gap-5 justify-content-center align-items-center">
+                        <div class="text-center">
+                            <div class="fs-2"><span id="city-name"></span>, <span id="country-name"></span></div>
+                            <div class="fs-5">Last Updated <b id="last-updated"></b></div>
                         </div>
-                        <div class="fs-5">Last Updated <b id="last-updated">16.06</b></div>
+                        <div class="fs-5">
+                            <div><b id="current-temp"></b></div>
+                            <div>Feels Like <b id="current-perceptible-temp"></b></div>
+                            <div id="current-condition"></div>
+                        </div>
                     </div>
-                    <div class="fs-5">
-                        <div><b id="current-temp">16</b></div>
-                        <div>Feels Like <b id="current-perceptible-temp">10</b></div>
-                        <div id="current-condition">Pretty Darn <b>Cold</b></div>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-evenly align-items-center small">
+                    <div>
+                        Moonrise:
+                        <b id="moonrise"></b>
+                    </div>
+                    <div>
+                        Moonset:
+                        <b id="moonset"></b>
+                    </div>
+                    <div>
+                        Sunrise:
+                        <b id="sunrise"></b>
+                    </div>
+                    <div>
+                        Sunset:
+                        <b id="sunset"></b>
                     </div>
                 </div>
+                <div class="d-flex justify-content-evenly align-items-center small mt-3">
+                    <div>
+                        Average Temperature:
+                        <b id="avg-temp"></b>
+                    </div>
+                    <div>
+                        Min Temperature:
+                        <b id="min-temp"></b>
+                    </div>
+                    <div>
+                        Max Temperature:
+                        <b id="max-temp"></b>
+                    </div>
+                    <div>
+                        Average Humidity:
+                        <b id="avg-humidity"></b>
+                    </div>
+                </div>
+                <div class="forecast-hour-container m-5"></div>
             </div>
-            <hr />
-            <div class="d-flex justify-content-evenly align-items-center small">
-                <div>
-                    Moonrise:
-                    <b id="moonrise">16:00</b>
-                </div>
-                <div>
-                    Moonset:
-                    <b id="moonset">16:00</b>
-                </div>
-                <div>
-                    Sunrise:
-                    <b id="sunrise">16:00</b>
-                </div>
-                <div>
-                    Sunset:
-                    <b id="sunset">16:00</b>
-                </div>
-            </div>
-            <div class="d-flex justify-content-evenly align-items-center small mt-3">
-                <div>
-                    Average Temperature:
-                    <b id="avg-temp">16:00</b>
-                </div>
-                <div>
-                    Min Temperature:
-                    <b id="min-temp">16:00</b>
-                </div>
-                <div>
-                    Max Temperature:
-                    <b id="max-temp">16:00</b>
-                </div>
-                <div>
-                    Average Humidity:
-                    <b id="avg-humidity">16:00</b>
-                </div>
-            </div>
-            <div class="forecast-hour-container m-5"></div>
         </div>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
